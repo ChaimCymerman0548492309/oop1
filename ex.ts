@@ -212,6 +212,11 @@ const appointments2 = [appointment1 ,appointment2 ,appointment3 ,appointment4 ]
 let hospital = new Hospital (patients2 , doctors2 ,appointments2) 
 hospital.Hospitalinfo()
 
+ 
+// addPatients() : void {
+
+
+
 //  git init
 // git add .
 // git commit -m "first commit"
