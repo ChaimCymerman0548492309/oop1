@@ -149,12 +149,20 @@ class Doctor extends Person {
   }
 }
 
-let person = new Person("Dodo", "Cohen")
-let patient = new Patient(1234, "David", "Cohen")
-let doctor = new Doctor(1234, "MainDoctor", "David", "Cohen")
-console.log(person);
-console.log(patient);
-console.log(doctor);
+let person3 = new Person("Dodo1", "Cohen")
+let person1 = new Person("Dodo2", "Cohen")
+let person2 = new Person("Dodo3", "Cohen")
+let patient1 = new Patient(1234, "David1", "Cohen")
+let patient2 = new Patient(1234, "David2", "Cohen")
+let patient3 = new Patient(1234, "David3", "Cohen")
+let patient4 = new Patient(1234, "David4", "Cohen")
+let doctor1 = new Doctor(1234, "MainDoctor", "David1", "Cohen")
+let doctor2 = new Doctor(1234, "MainDoctor", "David2", "Cohen")
+let doctor3 = new Doctor(1234, "MainDoctor", "David3", "Cohen")
+let doctor4 = new Doctor(1234, "MainDoctor", "David4", "Cohen")
+console.log(person1);
+console.log(patient1);
+console.log(doctor1);
 
 class Appointment {
   patient: Patient
@@ -169,12 +177,45 @@ class Appointment {
     this.time = time
   }
 
-  infoAppointment (): void {
+  infoAppointment(): void {
     console.log(`"doctor name : ${this.doctor.firstName} ${this.doctor.lastName} , doctorID : ${this.doctor.doctorID} , specialization : ${this.doctor.specialization} , patient name : ${this.patient.firstName} ${this.patient.lastName} , date : ${this.date} , time : ${this.time}"`);
-    
+
   }
 }
- let appointment = new Appointment(patient ,doctor , "01.01.22" , "10:00" )
- console.log(appointment);
- appointment.infoAppointment()
+let appointment1 = new Appointment(patient1, doctor1, "01.01.22", "10:00")
+let appointment2 = new Appointment(patient1, doctor1, "01.01.22", "20:00")
+let appointment3 = new Appointment(patient1, doctor1, "01.01.22", "30:00")
+let appointment4 = new Appointment(patient1, doctor1, "01.01.22", "40:00")
+console.log(appointment1);
+appointment1.infoAppointment()
+
+class Hospital {
+  patients: Patient[]
+  doctors: Doctor[]
+  appointments: Appointment[]
+
+  constructor(patients: Patient[], doctors: Doctor[], appointments: Appointment[]) {
+    this.patients = patients
+    this.doctors = doctors
+    this.appointments = appointments
+
+  }
+  Hospitalinfo():void {
+    for ( let i = 0 ; i < this.patients.length ; i ++) {
+    console.log(`"firstName : ${this.patients[i].firstName}, doctor : ${this.doctors[i].lastName}, date : ${this.appointments[i].date}"`);
+    } 
+  }
+}
+const patients2 = [patient1,patient2,patient3,patient4]
+const doctors2 = [doctor1,doctor2 ,doctor3 ,doctor4 ]
+const appointments2 = [appointment1 ,appointment2 ,appointment3 ,appointment4 ]
+let hospital = new Hospital (patients2 , doctors2 ,appointments2) 
+hospital.Hospitalinfo()
+
+//  git init
+// git add .
+// git commit -m "first commit"
+// git branch -M main
+// git remote add origin https://github.com/ChaimCymerman0548492309/oop1.git
+// git push -u origin main
 
