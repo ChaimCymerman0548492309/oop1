@@ -156,4 +156,25 @@ console.log(person);
 console.log(patient);
 console.log(doctor);
 
+class Appointment {
+  patient: Patient
+  doctor: Doctor
+  date: string
+  time: string
+
+  constructor(patient: Patient, doctor: Doctor, date: string, time: string) {
+    this.patient = patient
+    this.doctor = doctor
+    this.date = date
+    this.time = time
+  }
+
+  infoAppointment (): void {
+    console.log(`"doctor name : ${this.doctor.firstName} ${this.doctor.lastName} , doctorID : ${this.doctor.doctorID} , specialization : ${this.doctor.specialization} , patient name : ${this.patient.firstName} ${this.patient.lastName} , date : ${this.date} , time : ${this.time}"`);
+    
+  }
+}
+ let appointment = new Appointment(patient ,doctor , "01.01.22" , "10:00" )
+ console.log(appointment);
+ appointment.infoAppointment()
 
